@@ -1,10 +1,10 @@
 var self = this;
-var banks = [];
+var banks = {};
 var selectedBanks = [];
 
 function loadBanks() {
     $.getJSON("/js/banks.json", function(json){
-        self.banks = json.banks;
+        self.banks = json;
 
         if (localStorage['selected-banks'])
             self.selectedBanks = JSON.parse(localStorage['selected-banks']);
@@ -15,14 +15,13 @@ function loadBanks() {
 
 
         $(':checkbox').change(function(e) {
+            var id = parseInt($(this).attr('id'));
+
             if ($(this).is(':checked')) {
-                self.selectedBanks.push({
-                    name: banks[]
-                    index: parseInt($(this).attr('id'))
-                });
+                self.selectedBanks.push(id);
             }
             else {
-                self.selectedBanks.remove(parseInt($(this).attr('id')));
+                self.selectedBanks.remove(id);
             }
 
             localStorage['selected-banks'] = JSON.stringify(selectedBanks);
@@ -31,18 +30,18 @@ function loadBanks() {
 }
 
 function generateBanksList() {
-    for (var i = 0; i < banks.length; i++) {
+    for (var bankId in banks) {
         var checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
-        checkbox.setAttribute('id', banks[i].index);
+        checkbox.setAttribute('id', bankId);
 
-        if (selectedBanks.indexOf(banks[i].index) >= 0)
+        if (selectedBanks.indexOf(parseInt(bankId)) > -1)
             checkbox.setAttribute('checked', '');
 
         var label = document.createElement('label');
-        label.setAttribute('for', banks[i].index);
+        label.setAttribute('for', bankId);
         label.appendChild(checkbox);
-        label.innerHTML = label.innerHTML + banks[i].name;
+        label.innerHTML = label.innerHTML + banks[bankId];
 
         document.getElementsByClassName('bank-list')[0].appendChild(label);
     }

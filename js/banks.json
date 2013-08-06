@@ -1,84 +1,22 @@
 {
-    "banks": [
-        {
-            "name": "AEB",
-            "index": 2
-        },
-        {
-            "name": "ABB",
-            "index": 3
-        },
-        {
-            "name": "AREXIMBANK",
-            "index": 4
-        },
-        {
-            "name": "ProCredit",
-            "index": 5
-        },
-        {
-            "name": "ADB",
-            "index": 6
-        },
-        {
-            "name": "Inecobank",
-            "index": 7
-        },
-        {
-            "name": "Converse",
-            "index": 8
-        },
-        {
-            "name": "ASHIB",
-            "index": 9
-        },
-        {
-            "name": "ASB",
-            "index": 10
-        },
-        {
-            "name": "Unibank",
-            "index": 11
-        },
-        {
-            "name": "Prometey",
-            "index": 12
-        },
-        {
-            "name": "Anelik",
-            "index": 13
-        },
-        {
-            "name": "ARARATBANK",
-            "index": 14
-        },
-        {
-            "name": "VTB",
-            "index": 15
-        },
-        {
-            "name": "ACBA",
-            "index": 16
-        },
-        {
-            "name": "HSBC",
-            "index": 17
-        },
-        {
-            "name": "Byblos",
-            "index": 18
-        },
-        {
-            "name": "Ameriabank",
-            "index": 19
-        },
-        {
-            "name": "BTA",
-            "index": 20
-        },
-        {
-            "name": "Artsakhbank",
-            "index": 21
-        }
-    ]
+    "2": "AEB",
+    "3": "ABB",
+    "4": "AREXIMBANK",
+    "5": "ProCredit",
+    "6": "ADB",
+    "7": "Inecobank",
+    "8": "Converse",
+    "9": "ASHIB",
+    "10": "ASB",
+    "11": "Unibank",
+    "12": "Prometey",
+    "13": "Anelik",
+    "14": "ARARATBANK",
+    "15": "VTB",
+    "16": "ACBA",
+    "17": "HSBC",
+    "18": "Byblos",
+    "19": "Ameriabank",
+    "20": "BTA",
+    "21": "Artsakhbank"
 }

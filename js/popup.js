@@ -1,6 +1,13 @@
 var self = this;
+var banls = {};
 
+function loadBanks() {
+    $.getJSON("/js/banks.json", function(json){
+        self.banks = json;
+    });
+}
 function getRates() {
+    self.loadBanks();
     $.ajax({
         url: 'http://www.rate.am/',
         type: 'GET',
@@ -14,6 +21,10 @@ function getRates() {
             for(var i=0; i<selectedBanks.length; i++) {
                var rates = $('.rb tr', html)[selectedBanks[i]].children;
                var tr = document.createElement('tr');
+               var td = document.createElement('td');
+               td.setAttribute('colspan', '2');
+               td.appendChild(document.createTextNode(self.banks[selectedBanks[i]]));
+               tr.appendChild(td);
 
                self.currentRates[selectedBanks[i]] = {
                    USD: {
