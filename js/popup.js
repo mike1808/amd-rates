@@ -48,6 +48,8 @@ function getRates() {
                for (var j = 5; j <= 10; j++) {
                    var td = document.createElement('td');
                    td.appendChild(document.createTextNode(rates[j].innerText));
+                   if (rates[j].firstChild.className == 'best')
+                        td.setAttribute('class', 'best');
                    tr.appendChild(td);
                }
 

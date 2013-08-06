@@ -26,6 +26,13 @@ table td {
     border-color: #666666;
     background-color: #ffffff;
 }
+table tbody td:first-child {
+    font-weight: bold;
+}
+
+table .best {
+    font-weight: bold;
+}
 
 .calc {
     margin-top: 10px;
