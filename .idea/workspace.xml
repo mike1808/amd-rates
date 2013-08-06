@@ -9,7 +9,7 @@
     <file path="/main.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375776793218" ignored="false" />
     <file path="/popup.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375791866644" ignored="false" />
     <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800516863" ignored="false" />
-    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375801193195" ignored="false" />
+    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375801325060" ignored="false" />
     <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375799347671" ignored="false" />
     <file path="/options.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800204465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,7 +52,7 @@
       <file leaf-file-name="options.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="29" selection-start="309" selection-end="309" vertical-scroll-proportion="0.1954023">
+            <state line="12" column="41" selection-start="409" selection-end="409" vertical-scroll-proportion="0.23448277">
               <folding />
             </state>
           </provider>
@@ -436,7 +436,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="309" selection-end="309" vertical-scroll-proportion="0.1954023">
+        <state line="12" column="41" selection-start="409" selection-end="409" vertical-scroll-proportion="0.23448277">
           <folding />
         </state>
       </provider>

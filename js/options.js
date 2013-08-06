@@ -10,7 +10,7 @@ function loadBanks() {
             if ($(this).is(':checked'))
                 self.selectedBanks.push(parseInt($(this).attr('id')));
             else
-                self.selectedBanks.pop(parseInt($(this).attr('id')));
+                self.selectedBanks.remove(parseInt($(this).attr('id')));
 
         })
     });
