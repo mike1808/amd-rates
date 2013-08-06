@@ -1,22 +1,84 @@
 {
-    "banks": ["AEB": 2,
-    "ABB": 3,
-    "AREXIMBANK": 4,
-    "ProCredit": 5,
-    "ADB": 6,
-    "Inecobank": 7,
-    "Converse": 8,
-    "ASHIB": 9,
-    "ASB": 10,
-    "Unibank": 11,
-    "Prometey": 12,
-    "Anelik": 13,
-    "ARARATBANK": 14,
-    "VTB": 15,
-    "ACBA": 16,
-    "HSBC": 17,
-    "Byblos": 18,
-    "Ameriabank": 19,
-    "BTA": 20,
-    "Artsakhbank": 21]
+    "banks": [
+        {
+            "name": "AEB",
+            "index": 2
+        },
+        {
+            "name": "ABB",
+            "index": 3
+        },
+        {
+            "name": "AREXIMBANK",
+            "index": 4
+        },
+        {
+            "name": "ProCredit",
+            "index": 5
+        },
+        {
+            "name": "ADB",
+            "index": 6
+        },
+        {
+            "name": "Inecobank",
+            "index": 7
+        },
+        {
+            "name": "Converse",
+            "index": 8
+        },
+        {
+            "name": "ASHIB",
+            "index": 9
+        },
+        {
+            "name": "ASB",
+            "index": 10
+        },
+        {
+            "name": "Unibank",
+            "index": 11
+        },
+        {
+            "name": "Prometey",
+            "index": 12
+        },
+        {
+            "name": "Anelik",
+            "index": 13
+        },
+        {
+            "name": "ARARATBANK",
+            "index": 14
+        },
+        {
+            "name": "VTB",
+            "index": 15
+        },
+        {
+            "name": "ACBA",
+            "index": 16
+        },
+        {
+            "name": "HSBC",
+            "index": 17
+        },
+        {
+            "name": "Byblos",
+            "index": 18
+        },
+        {
+            "name": "Ameriabank",
+            "index": 19
+        },
+        {
+            "name": "BTA",
+            "index": 20
+        },
+        {
+            "name": "Artsakhbank",
+            "index": 21
+        }
+    ]
 }

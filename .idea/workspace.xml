@@ -8,9 +8,10 @@
     <file path="/popup.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375793311103" ignored="false" />
     <file path="/main.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375776793218" ignored="false" />
     <file path="/popup.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375791866644" ignored="false" />
-    <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375794262763" ignored="false" />
-    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375794442556" ignored="false" />
-    <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375794484653" ignored="false" />
+    <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375799962272" ignored="false" />
+    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800345616" ignored="false" />
+    <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375799347671" ignored="false" />
+    <file path="/options.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800204465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
       <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="241" selection-end="241" vertical-scroll-proportion="-8.5">
+            <state line="3" column="16" selection-start="46" selection-end="46" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
@@ -42,25 +43,25 @@
       <file leaf-file-name="options.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="-4.576923">
+            <state line="11" column="53" selection-start="264" selection-end="264" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="options.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="36" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+            <state line="19" column="41" selection-start="625" selection-end="625" vertical-scroll-proportion="0.37126437">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="banks.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="banks.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/banks.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="14" selection-start="16" selection-end="16" vertical-scroll-proportion="0.02014218">
+            <state line="32" column="20" selection-start="597" selection-end="597" vertical-scroll-proportion="-6.9615383">
               <folding />
             </state>
           </provider>
@@ -69,7 +70,7 @@
       <file leaf-file-name="popup.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1624" selection-end="1760" vertical-scroll-proportion="-30.5">
+            <state line="14" column="60" selection-start="389" selection-end="389" vertical-scroll-proportion="-3.0384614">
               <folding />
             </state>
           </provider>
@@ -93,6 +94,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="options.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/options.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="19" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -105,11 +115,12 @@
       <list>
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/popup.js" />
-        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/popup.html" />
-        <option value="$PROJECT_DIR$/options.html" />
-        <option value="$PROJECT_DIR$/js/options.js" />
         <option value="$PROJECT_DIR$/js/banks.json" />
+        <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/options.html" />
+        <option value="$PROJECT_DIR$/css/options.css" />
+        <option value="$PROJECT_DIR$/js/options.js" />
       </list>
     </option>
   </component>
@@ -145,7 +156,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,10 +218,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
@@ -328,49 +340,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/popup.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/options.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1624" selection-end="1760" vertical-scroll-proportion="-30.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="241" selection-end="241" vertical-scroll-proportion="-8.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="-4.576923">
+        <state line="13" column="1" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -384,7 +354,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/banks.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="14" selection-start="16" selection-end="16" vertical-scroll-proportion="0.02014218">
+        <state line="1" column="14" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1624" selection-end="1760" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/popup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/banks.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="20" selection-start="597" selection-end="597" vertical-scroll-proportion="-6.9615383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="60" selection-start="389" selection-end="389" vertical-scroll-proportion="-3.0384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/popup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/options.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="19" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="16" selection-start="46" selection-end="46" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="53" selection-start="264" selection-end="264" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="41" selection-start="625" selection-end="625" vertical-scroll-proportion="0.37126437">
           <folding />
         </state>
       </provider>
