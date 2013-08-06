@@ -6,6 +6,13 @@ function loadBanks() {
     $.getJSON("/js/banks.json", function(json){
         self.banks = json.banks;
         self.generateBanksList();
+        $(':checkbox').change(function(e) {
+            if ($(this).is(':checked'))
+                self.selectedBanks.push(parseInt($(this).attr('id')));
+            else
+                self.selectedBanks.pop(parseInt($(this).attr('id')));
+
+        })
     });
 }
 
@@ -18,10 +25,11 @@ function generateBanksList() {
         label.setAttribute('for', banks[i].index);
         label.appendChild(checkbox);
         label.innerHTML = label.innerHTML + banks[i].name;
-        document.body.appendChild(label);
+        document.getElementsByClassName('bank-list')[0].appendChild(label);
     }
 }
 
 $(function(){
     loadBanks();
+
 });

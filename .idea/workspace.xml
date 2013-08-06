@@ -8,8 +8,8 @@
     <file path="/popup.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375793311103" ignored="false" />
     <file path="/main.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375776793218" ignored="false" />
     <file path="/popup.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375791866644" ignored="false" />
-    <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375799962272" ignored="false" />
-    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800345616" ignored="false" />
+    <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800516863" ignored="false" />
+    <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375801193195" ignored="false" />
     <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375799347671" ignored="false" />
     <file path="/options.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375800204465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="options.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="53" selection-start="264" selection-end="264" vertical-scroll-proportion="-7.1923075">
+            <state line="7" column="27" selection-start="161" selection-end="161" vertical-scroll-proportion="-4.576923">
               <folding />
             </state>
           </provider>
@@ -52,16 +52,7 @@
       <file leaf-file-name="options.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="41" selection-start="625" selection-end="625" vertical-scroll-proportion="0.37126437">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="banks.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/banks.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="20" selection-start="597" selection-end="597" vertical-scroll-proportion="-6.9615383">
+            <state line="10" column="29" selection-start="309" selection-end="309" vertical-scroll-proportion="0.1954023">
               <folding />
             </state>
           </provider>
@@ -118,8 +109,8 @@
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/js/banks.json" />
         <option value="$PROJECT_DIR$/manifest.json" />
-        <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/css/options.css" />
+        <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/js/options.js" />
       </list>
     </option>
@@ -394,20 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/banks.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="20" selection-start="597" selection-end="597" vertical-scroll-proportion="-6.9615383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="60" selection-start="389" selection-end="389" vertical-scroll-proportion="-3.0384614">
@@ -429,6 +406,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/banks.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="20" selection-start="597" selection-end="597" vertical-scroll-proportion="-6.9615383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="16" selection-start="46" selection-end="46" vertical-scroll-proportion="-1.9615384">
@@ -438,14 +422,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="53" selection-start="264" selection-end="264" vertical-scroll-proportion="-7.1923075">
+        <state line="7" column="27" selection-start="161" selection-end="161" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="41" selection-start="625" selection-end="625" vertical-scroll-proportion="0.37126437">
+        <state line="10" column="29" selection-start="309" selection-end="309" vertical-scroll-proportion="0.1954023">
           <folding />
         </state>
       </provider>
