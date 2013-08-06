@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+
+    "name": "VTB Rates",
+    "version": "0.2",
+
+    "permissions": [
+        "http://www.rate.am/"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html"
+}

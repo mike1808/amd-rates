@@ -1,0 +1,49 @@
+body {
+    min-width: 300px;
+}
+
+table {
+    width: 300px;
+    font-family: verdana, arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    text-align: center;
+}
+table th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+.calc {
+    margin-top: 10px;
+    width: 300px;
+}
+
+.calc input[type="text"] {
+    width: 100%;
+}
+
+.calc .in {
+    width: 135px;
+    position: relative;
+    float: left;
+}
+
+.calc .out {
+    width: 135px;
+    position: relative;
+    float: right;
+}
