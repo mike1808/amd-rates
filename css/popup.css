@@ -66,3 +66,11 @@ table .best {
 .calc #swap-cur {
     margin: 17px 0 0 16px;
 }
+
+#options {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

@@ -98,3 +98,7 @@ h1 a,li input[type='checkbox']:checked+a,li input[type='radio']:checked+a,li inp
     display: inline-block;
     width: 50%;
 }
+
+.buttons {
+    margin-top: 30px;
+}
