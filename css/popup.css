@@ -1,9 +1,9 @@
 body {
-    min-width: 300px;
+    min-width: 420px;
 }
 
 table {
-    width: 300px;
+    width: 410px;
     font-family: verdana, arial, sans-serif;
     font-size: 11px;
     color: #333333;
@@ -36,21 +36,29 @@ table .best {
 
 .calc {
     margin-top: 10px;
-    width: 300px;
+    margin-left: 20%;
+    width: 60%;
 }
 
 .calc input[type="text"] {
     width: 100%;
 }
 
+.calc #bank-list {
+    width: 100%;
+}
+
+.calc [name="currency-calc-cur"] {
+    width: 78%;
+}
 .calc .in {
-    width: 135px;
+    width: 40%;
     position: relative;
     float: left;
 }
 
 .calc .out {
-    width: 135px;
+    width: 40%;
     position: relative;
     float: right;
 }
