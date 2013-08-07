@@ -41,7 +41,7 @@ function getRates() {
                 for (var j = 5; j <= 10; j++) {
                     var td = document.createElement('td');
                     td.appendChild(document.createTextNode(rates[j].innerText));
-                    if (rates[j].firstChild.className == 'best')
+                    if (rates[j].firstChild && rates[j].firstChild.className == 'best')
                         td.setAttribute('class', 'best');
                     tr.appendChild(td);
                 }
@@ -86,14 +86,15 @@ var currentRates = {};
 
 
 
-function setCurrency(e) {
+function setCurrency(e, data) {
     var currentElement = $(this);
     var value = currentElement.val();
     var inputType = currentElement.attr('id').substr(0, currentElement.attr('id').indexOf('select') - 1);
 
     self.calcCurrencies[inputType] = value;
     $('#cur-img-' + inputType).attr('src', 'img/' + value + ".gif");
-    $('#' + inputType).change();
+    if (!data || !data.swap)
+        $('#' + inputType).change();
 }
 
 function calculateCurrency(e) {
@@ -103,9 +104,13 @@ function calculateCurrency(e) {
     var expressionRegExp = /^[0-9\*\+\-\/\(\)\.\s]+$/;
     var currentBank = parseInt($('#bank-list').val());
 
-
-    var ratio = self.currentRates[currentBank][calcCurrencies[inputType]].sell /
-                self.currentRates[currentBank][calcCurrencies[reversedType]].sell;
+    if (inputType == 'in')
+        var ratio = self.currentRates[currentBank][calcCurrencies[inputType]].buy /
+                    self.currentRates[currentBank][calcCurrencies[reversedType]].buy;
+    else {
+        var ratio = self.currentRates[currentBank][calcCurrencies[inputType]].sell /
+            self.currentRates[currentBank][calcCurrencies[reversedType]].sell;
+    }
     var value = 0;
     if (expressionRegExp.test(input.val()))
         value = parseInt(eval(input.val())) * ratio;
@@ -127,10 +132,12 @@ $(function() {
     $('#in-select').change(setCurrency);
     $('#out-select').change(setCurrency);
 
-    $('#in').change(calculateCurrency);
-    $('#in').keyup(calculateCurrency);
-    $('#out').change(calculateCurrency);
-    $('#out').keyup(calculateCurrency);
+    $('#in').on('change keyup', calculateCurrency);
+    $('#out').on('change keyup', calculateCurrency);
 
-
+    $('#swap-cur').click(function (){
+        var outVal = $('#out-select').val();
+        $('#out-select').val($('#in-select').val()).trigger('change', { swap: true })
+        $('#in-select').val(outVal).change();
+    });
 });

@@ -14,7 +14,7 @@ function loadBanks() {
         self.generateBanksList();
 
 
-        $(':checkbox').change(function(e) {
+        $('input[type="checkbox"]').change(function(e) {
             var id = parseInt($(this).attr('id'));
 
             if ($(this).is(':checked')) {
@@ -43,10 +43,25 @@ function generateBanksList() {
         label.appendChild(checkbox);
         label.innerHTML = label.innerHTML + banks[bankId];
 
-        document.getElementsByClassName('bank-list')[0].appendChild(label);
+        var span = document.createElement('span');
+        span.appendChild(label);
+
+        document.getElementsByClassName('bank-list')[0].appendChild(span);
     }
 }
 
 $(function(){
     loadBanks();
+
+    $('#check-all').click(function () {
+        $('.bank-list input[type="checkbox"]').each(function() {
+            if (!$(this).is(':checked'))
+                $(this).prop('checked', true).change()});
+    });
+
+    $('#uncheck-all').click(function () {
+        $('.bank-list input[type="checkbox"]').each(function() {
+            if ($(this).is(':checked'))
+                $(this).prop('checked', false).change()});
+    })
 });
