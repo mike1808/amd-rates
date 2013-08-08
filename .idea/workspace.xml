@@ -13,7 +13,7 @@
     <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375813524580" ignored="false" />
     <file path="/options.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375886459362" ignored="false" />
     <file path="/utils.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375855704407" ignored="false" />
-    <file path="/popup.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375886348400" ignored="false" />
+    <file path="/popup.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375942463564" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="options.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/options.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="18" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.9413793">
+            <state line="98" column="16" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -72,7 +72,7 @@
       <file leaf-file-name="banks.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/banks.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="7" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+            <state line="18" column="7" selection-start="340" selection-end="340" vertical-scroll-proportion="-11.769231">
               <folding />
             </state>
           </provider>
@@ -81,7 +81,7 @@
       <file leaf-file-name="popup.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="15" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-26.576923">
+            <state line="31" column="31" selection-start="845" selection-end="855" vertical-scroll-proportion="-10.884615">
               <folding />
             </state>
           </provider>
@@ -96,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popup.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="popup.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/popup.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="4" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
+            <state line="44" column="13" selection-start="736" selection-end="736" vertical-scroll-proportion="0.14022988">
               <folding />
             </state>
           </provider>
@@ -122,9 +122,9 @@
         <option value="$PROJECT_DIR$/js/banks.json" />
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/js/popup.js" />
-        <option value="$PROJECT_DIR$/css/popup.css" />
         <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/css/options.css" />
+        <option value="$PROJECT_DIR$/css/popup.css" />
       </list>
     </option>
   </component>
@@ -239,8 +239,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -428,16 +428,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/banks.json">
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+        <state line="145" column="22" selection-start="4894" selection-end="4894" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
+    <entry file="file://$PROJECT_DIR$/css/options.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="22" selection-start="4894" selection-end="4894" vertical-scroll-proportion="0.0">
+        <state line="98" column="16" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -449,9 +449,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/popup.html">
+    <entry file="file://$PROJECT_DIR$/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="15" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-26.576923">
+        <state line="15" column="12" selection-start="419" selection-end="419" vertical-scroll-proportion="-9.807693">
           <folding />
         </state>
       </provider>
@@ -463,23 +463,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/banks.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="7" selection-start="340" selection-end="340" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="31" selection-start="845" selection-end="855" vertical-scroll-proportion="-10.884615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/popup.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="4" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="419" selection-end="419" vertical-scroll-proportion="-9.807693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/options.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="18" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.9413793">
+        <state line="44" column="13" selection-start="736" selection-end="736" vertical-scroll-proportion="0.14022988">
           <folding />
         </state>
       </provider>
