@@ -1,20 +1,17 @@
 var self = this;
-var banks = {};
 var selectedBanks = [];
+var selectedCurrencies = [];
 
-function loadBanks() {
+function loadData() {
     $.getJSON("/js/banks.json", function(json){
-        self.banks = json;
-
         if (localStorage['selected-banks'])
             self.selectedBanks = JSON.parse(localStorage['selected-banks']);
         else
             self.selectedBanks = JSON.parse('[]');
 
-        self.generateBanksList();
+        self.generateBanksList(json);
 
-
-        $('input[type="checkbox"]').change(function(e) {
+        $('.bank-list [type="checkbox"]').change(function(e) {
             var id = parseInt($(this).attr('id'));
 
             if ($(this).is(':checked')) {
@@ -24,18 +21,40 @@ function loadBanks() {
                 self.selectedBanks.remove(id);
             }
 
-            localStorage['selected-banks'] = JSON.stringify(selectedBanks);
+            localStorage['selected-banks'] = JSON.stringify(self.selectedBanks);
+        });
+    });
+
+    $.getJSON("/js/currencies.json", function(json){
+        if (localStorage['selected-currencies'])
+            self.selectedCurrencies = JSON.parse(localStorage['selected-currencies']);
+        else
+            self.selectedCurrencies = JSON.parse('[]');
+
+        self.generateCurrenciesList(json);
+
+        $('.currency-list [type="checkbox"]').change(function(e) {
+            var currency = $(this).attr('id');
+
+            if ($(this).is(':checked')) {
+                self.selectedCurrencies.push(currency);
+            }
+            else {
+                self.selectedCurrencies.remove(currency);
+            }
+
+            localStorage['selected-currencies'] = JSON.stringify(self.selectedCurrencies.sort());
         });
     });
 }
 
-function generateBanksList() {
+function generateBanksList(banks) {
     for (var bankId in banks) {
         var checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', bankId);
 
-        if (selectedBanks.indexOf(parseInt(bankId)) > -1)
+        if (self.selectedBanks.indexOf(parseInt(bankId)) > -1)
             checkbox.setAttribute('checked', '');
 
         var label = document.createElement('label');
@@ -50,8 +69,32 @@ function generateBanksList() {
     }
 }
 
+function generateCurrenciesList(currencies) {
+    for (var currency in currencies) {
+        var checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+        checkbox.setAttribute('id', currency);
+
+        if (self.selectedCurrencies.indexOf(currency) > -1)
+            checkbox.setAttribute('checked', '');
+
+        var img = document.createElement('img');
+        img.setAttribute('src', '/img/' + currency + '.gif');
+
+        var label = document.createElement('label');
+        label.setAttribute('for', currency);
+        label.appendChild(checkbox);
+        label.appendChild(img);
+
+        var span = document.createElement('span');
+        span.appendChild(label);
+
+        document.getElementsByClassName('currency-list')[0].appendChild(span);
+    }
+}
+
 $(function(){
-    loadBanks();
+    loadData();
 
     $('#check-all').click(function () {
         $('.bank-list input[type="checkbox"]').each(function() {

@@ -5,23 +5,8 @@
     <link rel="stylesheet" href="css/popup.css"/>
 </head>
 <body>
-    <table>
+    <table id="currency-table">
         <thead>
-
-            <tr>
-                <th rowspan="2" colspan="2">Bank</th>
-                <td colspan="2"><img src="img/USD.gif"/></td>
-                <td colspan="2"><img src="img/EUR.gif"/></td>
-                <td colspan="2"><img src="img/RUR.gif"/></td>
-            </tr>
-            <tr>
-                <th colspan="1">Buy</th>
-                <th colspan="1">Sell</th>
-                <th colspan="1">Buy</th>
-                <th colspan="1">Sell</th>
-                <th colspan="1">Buy</th>
-                <th colspan="1">Sell</th>
-            </tr>
         </thead>
         <tbody>
         </tbody>
@@ -32,20 +17,14 @@
             <img id="cur-img-in" src="img/AMD.gif"/>
             <select name="currency-calc-cur" id="in-select">
                 <option selected="selected" value="AMD">AMD</option>
-                <option value="EUR">EUR</option>
-                <option value="RUR">RUR</option>
-                <option value="USD">USD</option>
             </select>
             <input type="text" id="in"/>
         </div>
         <img id='swap-cur' src="img/swap.png" alt="Swap"/>
         <div class="out">
-            <img id="cur-img-out" src="img/USD.gif"/>
+            <img id="cur-img-out" src="img/AMD.gif"/>
             <select name="currency-calc-cur" id="out-select">
-                <option value="AMD">AMD</option>
-                <option value="EUR">EUR</option>
-                <option value="RUR">RUR</option>
-                <option selected="selected" value="USD">USD</option>
+                <option selected="selected" value="AMD">AMD</option>
             </select>
             <input type="text" id="out"/>
         </div>
