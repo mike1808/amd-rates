@@ -3,33 +3,36 @@
 <head>
     <title>AMd Rates</title>
     <link rel="stylesheet" href="css/popup.css"/>
+    <link rel="stylesheet" href="css/spinner.css"/>
 </head>
 <body>
-    <table id="currency-table">
-        <thead>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div class="spinner"></div>
+    <div class="container hidden">
+        <table id="currency-table">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
-    <div class="calc">
-        <div class="in">
-            <img id="cur-img-in" src="img/AMD.gif"/>
-            <select name="currency-calc-cur" id="in-select">
-                <option selected="selected" value="AMD">AMD</option>
-            </select>
-            <input type="text" id="in"/>
-        </div>
-        <img id='swap-cur' src="img/swap.png" alt="Swap"/>
-        <div class="out">
-            <img id="cur-img-out" src="img/AMD.gif"/>
-            <select name="currency-calc-cur" id="out-select">
-                <option selected="selected" value="AMD">AMD</option>
-            </select>
-            <input type="text" id="out"/>
+        <div class="calc">
+            <div class="in">
+                <img id="cur-img-in" src="img/AMD.gif"/>
+                <select name="currency-calc-cur" id="in-select">
+                    <option selected="selected" value="AMD">AMD</option>
+                </select>
+                <input type="text" id="in"/>
+            </div>
+            <img id='swap-cur' src="img/swap.png" alt="Swap"/>
+            <div class="out">
+                <img id="cur-img-out" src="img/AMD.gif"/>
+                <select name="currency-calc-cur" id="out-select">
+                    <option selected="selected" value="AMD">AMD</option>
+                </select>
+                <input type="text" id="out"/>
+            </div>
         </div>
     </div>
-
     <img id="options" src="img/options.png"/>
 
     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>

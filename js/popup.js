@@ -22,7 +22,7 @@ function loadData() {
 }
 
 // Get HTML and parse rates
-function getRates(callback) {
+function getRates(onRateLoad) {
     loadData();
 
     $.ajax({
@@ -99,6 +99,8 @@ function getRates(callback) {
            $('#bank-list').change(function() {
                 $('#in').change();
            });
+
+           onRateLoad();
         });
 }
 
@@ -191,7 +193,7 @@ function initCalc(){
 $(function() {
     initTable();
     initCalc();
-    getRates();
+    getRates(function(){});
 
 
     $('#in-select').change(setCurrency);
