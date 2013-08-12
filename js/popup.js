@@ -7,9 +7,10 @@ var calcCurrencies = {
     in: "AMD",
     out: "AMD"
 };
+var port = chrome.runtime.connect({name: "Background"});
 
-var selectedCurrencies = JSON.parse(localStorage['selected-currencies']) || [];
-var selectedBanks = JSON.parse(localStorage['selected-banks']) || [];
+var selectedCurrencies = JSON.parse(localStorage['selected-currencies'])
+var selectedBanks = JSON.parse(localStorage['selected-banks']);
 
 // Get banks and currencies table indexes list from json
 function loadData() {
@@ -33,9 +34,6 @@ function getRates(onRateLoad) {
     })
         .success(function(html){
             var fragment = document.createDocumentFragment();
-
-            // Default bank is VTB
-            if (!selectedBanks || selectedBanks.length == 0) selectedBanks = [15];
 
             // Creating dropdown list of banks for currency calculator
             var bankList = document.createElement('select');
@@ -193,7 +191,10 @@ function initCalc(){
 $(function() {
     initTable();
     initCalc();
-    getRates(function(){});
+    getRates(function(){
+        $('.spinner').addClass('hidden');
+        $('.container').removeClass('hidden');
+    });
 
 
     $('#in-select').change(setCurrency);
