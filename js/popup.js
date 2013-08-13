@@ -1,107 +1,94 @@
-var banks = {};
-var currencies = {};
+var self = this;
 
+
+var banks = {};
 var currentRates = {};
+var selectedCurrencies = JSON.parse(localStorage['selected-currencies'])
+var selectedBanks = JSON.parse(localStorage['selected-banks']);
 
 var calcCurrencies = {
     in: "AMD",
     out: "AMD"
 };
-var port = chrome.runtime.connect({name: "Background"});
 
-var selectedCurrencies = JSON.parse(localStorage['selected-currencies'])
-var selectedBanks = JSON.parse(localStorage['selected-banks']);
+
+var port = chrome.runtime.connect({name: "Background"});
+port.onMessage.addListener(function (msg){
+    console.log("Message received. " + msg);
+    currentRates = msg;
+
+    getRates(function(){
+        $('.spinner').addClass('hidden');
+        $('.container').removeClass('hidden');
+    });
+});
+port.postMessage('Send current rates');
+
 
 // Get banks and currencies table indexes list from json
 function loadData() {
     $.getJSON("/js/banks.json", function(json){
-        banks = json;
+        self.banks = json;
     });
-    $.getJSON("/js/currencies.json", function(json){
-        currencies = json;
-    });
+
 }
+
+loadData();
 
 // Get HTML and parse rates
 function getRates(onRateLoad) {
-    loadData();
+    var fragment = document.createDocumentFragment();
 
-    $.ajax({
-        url: 'http://www.rate.am/',
-        type: 'GET',
-        cache: false,
-        dataType: 'xml'
-    })
-        .success(function(html){
-            var fragment = document.createDocumentFragment();
+    // Creating dropdown list of banks for currency calculator
+    var bankList = document.createElement('select');
+    bankList.setAttribute('name', 'currency-calc-banks');
+    bankList.setAttribute('id', 'bank-list');
 
-            // Creating dropdown list of banks for currency calculator
-            var bankList = document.createElement('select');
-            bankList.setAttribute('name', 'currency-calc-banks');
-            bankList.setAttribute('id', 'bank-list');
+    for(var i=0; i<self.selectedBanks.length; i++) {
 
-            for(var i=0; i<selectedBanks.length; i++) {
-                // Parsing rates
-                var rates = $('.rb tr', html)[selectedBanks[i]].children;
-                // Creating markup for rates
-                var tr = document.createElement('tr');
-                var td = document.createElement('td');
-                td.setAttribute('colspan', '2');
-                td.appendChild(document.createTextNode(banks[selectedBanks[i]]));
-                tr.appendChild(td);
-                for (var j in selectedCurrencies) {
-                    for (var k in currencies[selectedCurrencies[j]]) {
-                        var td = document.createElement('td');
-                        var currentCur = rates[currencies[selectedCurrencies[j]][k]];
-                        td.appendChild(document.createTextNode(currentCur.innerText));
-                        if (currentCur.firstChild && currentCur.firstChild.className == 'best')
-                            td.setAttribute('class', 'best');
-                        tr.appendChild(td);
-                    }
+            // Creating markup for rates
+            var tr = document.createElement('tr');
+            var td = document.createElement('td');
+
+            td.setAttribute('colspan', '2');
+            td.innerText = self.banks[self.selectedBanks[i]];
+
+            tr.appendChild(td);
+
+            for (var j in self.selectedCurrencies) {
+                for (var k=0; k<2; k++) {
+                    td = document.createElement('td');
+                    td.innerText = self.currentRates[self.selectedBanks[i]][self.selectedCurrencies[j]][j ? 'sell' : 'buy'];
+                    tr.appendChild(td);
                 }
-                fragment.appendChild(tr);
 
-                // Updating rates for currency calculator
-                currentRates[selectedBanks[i]] = {
-                   USD: {
-                       buy: rates[5].innerText,
-                       sell: rates[6].innerText
-                   },
-                   EUR: {
-                       buy: rates[7].innerText,
-                       sell: rates[8].innerText
-                   },
-                   RUR: {
-                       buy: rates[9].innerText,
-                       sell: rates[10].innerText
-                   },
-                   GBP: {
-                       buy: rates[11].innerText,
-                       sell: rates[12].innerText
-                   },
-                   AMD: {
-                       buy: 1,
-                       sell: 1
-                   }
-                };
+            fragment.appendChild(tr);
+        }
 
-                // Creating options for banks dropdown
-                var bankOption = document.createElement('option');
-                bankOption.setAttribute('value', selectedBanks[i]);
-                bankOption.appendChild(document.createTextNode(banks[selectedBanks[i]]));
-                bankList.appendChild(bankOption);
-           }
 
-           $('#currency-table tbody').append(fragment);
-           $('.calc').prepend(bankList);
-           $('#bank-list').change(function() {
-                $('#in').change();
-           });
 
-           onRateLoad();
-        });
+        // Creating options for banks dropdown
+        var bankOption = document.createElement('option');
+        bankOption.setAttribute('value', self.selectedBanks[i]);
+        bankOption.appendChild(document.createTextNode(self.banks[self.selectedBanks[i]]));
+        bankList.appendChild(bankOption);
+    }
+
+
+    $('#currency-table tbody').append(fragment);
+    $('.calc').prepend(bankList);
+    $('#bank-list').change(function() {
+        $('#in').change();
+    });
+
+    onRateLoad();
+
 }
 
+// Is the current currency is the best
+/*function isBest(cell) {
+    if (currentCur.firstChild && currentCur.firstChild.className == 'best')
+}*/
 
 // Event handlers
 function setCurrency(e, data) {
@@ -188,13 +175,10 @@ function initCalc(){
     calcDL[1].appendChild(fragment.cloneNode(true));
 }
 
-$(function() {
+function onRatesLoad() {
     initTable();
     initCalc();
-    getRates(function(){
-        $('.spinner').addClass('hidden');
-        $('.container').removeClass('hidden');
-    });
+
 
 
     $('#in-select').change(setCurrency);
@@ -220,4 +204,6 @@ $(function() {
             }
         });
     });
-});
+}
+
+$(onRatesLoad);

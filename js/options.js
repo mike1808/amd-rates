@@ -2,6 +2,9 @@ var self = this;
 var selectedBanks = [];
 var selectedCurrencies = [];
 
+var port = chrome.runtime.connect({name: "Background"});
+
+
 function loadData() {
     $.getJSON("/js/banks.json", function(json){
         if (localStorage['selected-banks'])
@@ -16,9 +19,11 @@ function loadData() {
 
             if ($(this).is(':checked')) {
                 self.selectedBanks.push(id);
+                port.postMessage('Update current rates');
             }
             else {
                 self.selectedBanks.remove(id);
+                port.postMessage('Update current rates');
             }
 
             localStorage['selected-banks'] = JSON.stringify(!self.selectedBanks.length ? [15] : self.selectedBanks);
@@ -107,5 +112,12 @@ $(function(){
         $('.bank-list input[type="checkbox"]').each(function() {
             if ($(this).is(':checked'))
                 $(this).prop('checked', false).change()});
-    })
+    });
+
+    var updateRate = $('#update-rate');
+    updateRate.val(parseInt(localStorage['update-time']) / (1000 * 60));
+    updateRate.on('change', function(e) {
+        localStorage['update-time'] = parseInt(e.currentTarget.value) * 1000 * 60;
+        port.postMessage('Update "update rate"');
+    });
 });
