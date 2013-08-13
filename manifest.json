@@ -6,7 +6,8 @@
     "description": "AMD rates of many banks with a single click.",
 
     "icons": {
-        "19":"img/icon_19.png",
+        "16":"img/icon_16.png",
+        "48":"img/icon_48.png",
         "128":"img/icon_128.png"
     },
 
@@ -20,6 +21,10 @@
     },
 
     "options_page": "options.html",
+
+    "background": {
+        "page": "background.html"
+    },
 
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

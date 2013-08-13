@@ -21,7 +21,7 @@ function loadData() {
                 self.selectedBanks.remove(id);
             }
 
-            localStorage['selected-banks'] = JSON.stringify(self.selectedBanks);
+            localStorage['selected-banks'] = JSON.stringify(!self.selectedBanks.length ? [15] : self.selectedBanks);
         });
     });
 
@@ -43,7 +43,8 @@ function loadData() {
                 self.selectedCurrencies.remove(currency);
             }
 
-            localStorage['selected-currencies'] = JSON.stringify(self.selectedCurrencies.sort());
+            localStorage['selected-currencies'] = JSON.stringify(!self.selectedCurrencies.length ? ["USD"]:
+                self.selectedCurrencies.sort());
         });
     });
 }
