@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/background.html" afterPath="$PROJECT_DIR$/background.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background.js" afterPath="$PROJECT_DIR$/js/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/load-default-options.js" afterPath="$PROJECT_DIR$/js/load-default-options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options.html" afterPath="$PROJECT_DIR$/options.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/options.js" afterPath="$PROJECT_DIR$/js/options.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/popup.html" afterPath="$PROJECT_DIR$/popup.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/popup.js" afterPath="$PROJECT_DIR$/js/popup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -15,7 +13,7 @@
     <file path="/manifest.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376344230872" ignored="false" />
     <file path="/popup.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376349201525" ignored="false" />
     <file path="/main.css" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375776793218" ignored="false" />
-    <file path="/popup.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376426984527" ignored="false" />
+    <file path="/popup.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376460816245" ignored="false" />
     <file path="/options.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376427759386" ignored="false" />
     <file path="/options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376428324656" ignored="false" />
     <file path="/banks.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1375813524580" ignored="false" />
@@ -25,9 +23,9 @@
     <file path="/currencies.json" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376079884771" ignored="false" />
     <file path="/icon-animation.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376137811100" ignored="false" />
     <file path="/backgroundpage.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376138097402" ignored="false" />
-    <file path="/Dummy.txt" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376421832969" ignored="false" />
+    <file path="/Dummy.txt" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376460883555" ignored="false" />
     <file path="/backgroung.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376141258148" ignored="false" />
-    <file path="/background.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376428181303" ignored="false" />
+    <file path="/background.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376460707029" ignored="false" />
     <file path="/defaulOptions.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376345015363" ignored="false" />
     <file path="/background.html" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376345266001" ignored="false" />
     <file path="/load-default-options.js" changelist="38f6a2c2-84a4-4e24-9f3c-8b4574af2703" time="1376424670138" ignored="false" />
@@ -50,10 +48,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="options.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="options.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="13" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.4226804">
+            <state line="101" column="13" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -62,7 +60,16 @@
       <file leaf-file-name="popup.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/popup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="254" selection-end="589" vertical-scroll-proportion="0.0">
+            <state line="71" column="2" selection-start="2032" selection-end="2032" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="17" selection-start="528" selection-end="528" vertical-scroll-proportion="0.45443788">
               <folding />
             </state>
           </provider>
@@ -71,10 +78,8 @@
       <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="20" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!block;n#getCurrentRates#0" expanded="false" />
-              </folding>
+            <state line="49" column="16" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +96,7 @@
       <file leaf-file-name="options.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="45" selection-start="735" selection-end="735" vertical-scroll-proportion="-17.333334">
+            <state line="26" column="45" selection-start="735" selection-end="735" vertical-scroll-proportion="-16.64">
               <folding />
             </state>
           </provider>
@@ -100,7 +105,7 @@
       <file leaf-file-name="popup.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="418" selection-end="418" vertical-scroll-proportion="-11.333333">
+            <state line="8" column="30" selection-start="218" selection-end="218" vertical-scroll-proportion="-5.12">
               <folding />
             </state>
           </provider>
@@ -110,15 +115,6 @@
         <entry file="file://$PROJECT_DIR$/css/popup.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="18" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spinner.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/spinner.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="10" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +132,7 @@
       <file leaf-file-name="background.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/background.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.6666667">
+            <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,16 +162,16 @@
         <option value="$PROJECT_DIR$/backgroundpage.html" />
         <option value="$PROJECT_DIR$/js/icon-animation.js" />
         <option value="$PROJECT_DIR$/backgroung.html" />
-        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/defaulOptions.js" />
-        <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/css/popup.css" />
         <option value="$PROJECT_DIR$/background.html" />
         <option value="$PROJECT_DIR$/js/load-default-options.js" />
-        <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/options.html" />
-        <option value="$PROJECT_DIR$/js/background.js" />
         <option value="$PROJECT_DIR$/js/options.js" />
+        <option value="$PROJECT_DIR$/js/background.js" />
+        <option value="$PROJECT_DIR$/popup.html" />
+        <option value="$PROJECT_DIR$/js/popup.js" />
+        <option value="$PROJECT_DIR$/manifest.json" />
       </list>
     </option>
   </component>
@@ -233,6 +229,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,18 +292,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Projects/caravelle-ny" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -385,7 +381,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.49973643" order="6" side_tool="false" content_ui="tabs" />
@@ -431,7 +427,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -492,13 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/spinner.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="10" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
@@ -515,9 +504,7 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/options.css">
@@ -527,16 +514,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/popup.html">
+    <entry file="file://$PROJECT_DIR$/background.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="418" selection-end="418" vertical-scroll-proportion="-11.333333">
+        <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
+    <entry file="file://$PROJECT_DIR$/js/options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="254" selection-end="589" vertical-scroll-proportion="0.0">
+        <state line="101" column="13" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="16" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -548,32 +542,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/background.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.6666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="45" selection-start="735" selection-end="735" vertical-scroll-proportion="-17.333334">
+        <state line="26" column="45" selection-start="735" selection-end="735" vertical-scroll-proportion="-16.64">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/background.js">
+    <entry file="file://$PROJECT_DIR$/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="20" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!block;n#getCurrentRates#0" expanded="false" />
-          </folding>
+        <state line="8" column="30" selection-start="218" selection-end="218" vertical-scroll-proportion="-5.12">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/options.js">
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="13" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.4226804">
+        <state line="71" column="2" selection-start="2032" selection-end="2032" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="17" selection-start="528" selection-end="528" vertical-scroll-proportion="0.45443788">
           <folding />
         </state>
       </provider>

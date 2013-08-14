@@ -17,10 +17,7 @@ port.onMessage.addListener(function (msg){
     console.log("Message received. " + msg);
     currentRates = msg;
 
-    getRates(function(){
-        $('.spinner').addClass('hidden');
-        $('.container').removeClass('hidden');
-    });
+    getRates();
 });
 port.postMessage('Send current rates');
 
@@ -81,7 +78,8 @@ function getRates(onRateLoad) {
         $('#in').change();
     });
 
-    onRateLoad();
+    if (onRateLoad)
+        onRateLoad();
 
 }
 
