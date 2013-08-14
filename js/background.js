@@ -28,13 +28,14 @@ chrome.runtime.onConnect.addListener(function(port) {
 
 var currentRates = {};
 var currencies = {};
-var selectedBanks = JSON.parse(localStorage['selected-banks']);
-var updateTime = parseInt(JSON.parse(localStorage['update-time']));
+
 $.getJSON("/js/currencies.json", function(json){
     currencies = json;
 });
 
 function getCurrentRates() {
+    var selectedBanks = JSON.parse(localStorage['selected-banks']);
+
     $.ajax({
         url: 'http://www.rate.am/',
         type: 'GET',
@@ -81,5 +82,6 @@ function setUpdateInterval() {
     if (intervalId)
         clearInterval(intervalId);
 
+    var updateTime = parseInt(JSON.parse(localStorage['update-time']));
     intervalId = setInterval(getCurrentRates, updateTime);
 }
