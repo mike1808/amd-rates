@@ -1,38 +1,35 @@
-var self = this;
+var banks               = {},
+    currentRates        = {},
+    selectedCurrencies  = JSON.parse(localStorage['selected-currencies']),
+    selectedBanks       = JSON.parse(localStorage['selected-banks']),
 
+    calcCurrencies      = {
+                            in: "AMD",
+                            out: "AMD"
+    },
 
-var banks = {};
-var currentRates = {};
-var selectedCurrencies = JSON.parse(localStorage['selected-currencies'])
-var selectedBanks = JSON.parse(localStorage['selected-banks']);
+    port = chrome.runtime.connect({name: "Background"});
 
-var calcCurrencies = {
-    in: "AMD",
-    out: "AMD"
-};
-
-
-var port = chrome.runtime.connect({name: "Background"});
 port.onMessage.addListener(function (msg){
     console.log("Message received. " + msg);
     currentRates = msg;
 
-    getRates();
+    loadData(getRates);
 });
 port.postMessage('Send current rates');
 
-
-// Get banks and currencies table indexes list from json
-function loadData() {
+// Get banks list from json
+function loadData(callback) {
     $.getJSON("/js/banks.json", function(json){
-        self.banks = json;
+        banks = json;
+
+        callback();
     });
 
 }
 
-loadData();
 
-// Get HTML and parse rates
+// Get rates
 function getRates(onRateLoad) {
     var fragment = document.createDocumentFragment();
 
@@ -41,21 +38,26 @@ function getRates(onRateLoad) {
     bankList.setAttribute('name', 'currency-calc-banks');
     bankList.setAttribute('id', 'bank-list');
 
-    for(var i=0; i<self.selectedBanks.length; i++) {
+    for(var i=0; i<selectedBanks.length; i++) {
 
             // Creating markup for rates
             var tr = document.createElement('tr');
             var td = document.createElement('td');
 
             td.setAttribute('colspan', '2');
-            td.innerText = self.banks[self.selectedBanks[i]];
+            td.innerText = banks[selectedBanks[i]];
 
             tr.appendChild(td);
 
-            for (var j in self.selectedCurrencies) {
+            for (var j in selectedCurrencies) {
                 for (var k=0; k<2; k++) {
                     td = document.createElement('td');
-                    td.innerText = self.currentRates[self.selectedBanks[i]][self.selectedCurrencies[j]][j ? 'sell' : 'buy'];
+                    if (currentRates[selectedBanks[i]][selectedCurrencies[j]]) {
+                        td.innerText = currentRates[selectedBanks[i]][selectedCurrencies[j]][k ? 'sell' : 'buy'];
+                        if (currentRates[selectedBanks[i]][selectedCurrencies[j]][k ? 'sellIsBest' : 'buyIsBest'])
+                            td.className = 'best';
+                    }
+
                     tr.appendChild(td);
                 }
 
@@ -66,8 +68,8 @@ function getRates(onRateLoad) {
 
         // Creating options for banks dropdown
         var bankOption = document.createElement('option');
-        bankOption.setAttribute('value', self.selectedBanks[i]);
-        bankOption.appendChild(document.createTextNode(self.banks[self.selectedBanks[i]]));
+        bankOption.setAttribute('value', selectedBanks[i]);
+        bankOption.appendChild(document.createTextNode(banks[selectedBanks[i]]));
         bankList.appendChild(bankOption);
     }
 

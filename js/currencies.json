@@ -4,12 +4,12 @@
         "sell": 6
     },
     "RUR": {
-        "buy": 7,
-        "sell": 8
-    },
-    "EUR": {
         "buy": 9,
         "sell": 10
+    },
+    "EUR": {
+        "buy": 7,
+        "sell": 8
     },
     "GBP": {
         "buy": 11,

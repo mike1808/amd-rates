@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "AMD Rates",
-    "version": "0.5",
+    "version": "0.5.2",
     "description": "AMD rates of many banks with a single click.",
 
     "icons": {
@@ -12,7 +12,7 @@
     },
 
     "permissions": [
-        "http://www.rate.am/"
+        "http://*/*"
     ],
     "browser_action": {
         "default_icon": "img/icon_19.png",

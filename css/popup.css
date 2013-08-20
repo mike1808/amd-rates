@@ -1,8 +1,46 @@
 body {
     min-width: 150px;
     min-height: 90px;
+    overflow-y: hidden;
 }
 
+.top-panel {
+    font-family: verdana, arial, sans-serif;
+    background-color: #bbb;
+    list-style-type: none;
+    padding: 0;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #d6d6d6),
+        color-stop(0.4, #c0c0c0),
+        color-stop(1,#a4a4a4)
+    );
+}
+.top-panel li:hover { background-color: #ddd; }
+.top-panel li {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    color: #444;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin: 0 -3px;
+}
+.top-panel .selected {
+    background-color: #444 !important;
+    color: white;
+    text-shadow:none;
+    border-right-color: #aaa;
+    border-left: none;
+    box-shadow:inset 1px 2px 6px #070707;
+}
+.pull-right {
+    float: right;
+}
 table {
     width: 410px;
     font-family: verdana, arial, sans-serif;
@@ -73,14 +111,6 @@ table .best {
 .calc #swap-cur {
     margin: 17px 0 0 16px;
     float: left;
-}
-
-#options {
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
 }
 
 .hidden {
