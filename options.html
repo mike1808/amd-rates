@@ -24,7 +24,28 @@
 
     <section>
         <h2>Update rate</h2>
-        <input type="text" id="update-rate"> minutes
+        <div>
+            <input type="text" id="update-rate"/> minutes
+        </div>
+    </section>
+
+    <section>
+        <h2>Rate tooltip</h2>
+        <div>
+            <input type="radio" name="tooltipState" value="true"/>On
+            <input type="radio" name="tooltipState" value="false"/>Off
+            <div>
+                <div>
+                    <label for="tooltipTags">Tags to parse</label>
+                    <input id="tooltipTags" type="text" />
+                </div>
+                <small style="font-size: 0.5em">Add 'div' if you want to parse extra values, but page may load very slow</small>
+            </div>
+            <div>
+                <label for="tooltipBank">Bank for rates</label>
+                <select id="tooltipBank"></select>
+            </div>
+        </div>
     </section>
 
 

@@ -18,7 +18,7 @@
         animation: true
         , placement: 'top'
         , selector: false
-        , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+        , template: '<div class="tooltip-amd-rates"><div class="tooltip-arrow-amd-rates"></div><div class="tooltip-inner-amd-rates"></div></div>'
         , trigger: 'hover focus'
         , title: ''
         , delay: 0
@@ -123,7 +123,7 @@
 
             this.setContent()
 
-            if (this.options.animation) $tip.addClass('fade')
+            if (this.options.animation) $tip.addClass('fade-amd-rates')
 
             var placement = typeof this.options.placement == 'function' ?
                 this.options.placement.call(this, $tip[0], this.$element[0]) :
@@ -230,8 +230,8 @@
         var $tip  = this.tip()
         var title = this.getTitle()
 
-        $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-        $tip.removeClass('fade in top bottom left right')
+        $tip.find('.tooltip-inner-amd-rates')[this.options.html ? 'html' : 'text'](title)
+        $tip.removeClass('fade-amd-rates in top bottom left right')
     }
 
     Tooltip.prototype.hide = function () {
@@ -249,7 +249,7 @@
 
         $tip.removeClass('in')
 
-        $.support.transition && this.$tip.hasClass('fade') ?
+        $.support.transition && this.$tip.hasClass('fade-amd-rates') ?
             $tip
                 .one($.support.transition.end, complete)
                 .emulateTransitionEnd(150) :
@@ -302,7 +302,7 @@
     }
 
     Tooltip.prototype.arrow = function () {
-        return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow')
+        return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow-amd-rates')
     }
 
     Tooltip.prototype.validate = function () {

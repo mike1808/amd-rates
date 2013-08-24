@@ -1,9 +1,7 @@
-
-
 body {
     background: #e0e4cc;
     font-family: ronnia-1, ronnia-2, sans-serif;
-    font-size:62.5%;
+    font-size: 80.5%;
     color: #556270;
     padding: 0;
     width: 60em;
@@ -59,6 +57,7 @@ h2 {
 h1 + p, h2 + ul, h2 + div {
     border-top: 1px dashed rgba(85,98,112,0.25);
     padding-top: 1em;
+    margin: 0 0;
 }
 
 p {
@@ -84,6 +83,11 @@ h1:only-child,li:last-child {
 
 h1 a,li input[type='checkbox']:checked+a,li input[type='radio']:checked+a,li input[type='checkbox']:checked+label,li input[type='radio']:checked+label,a:hover,label:hover {
     color:#5270ff;
+}
+
+section > div > div {
+    margin: 2em 0;
+    font-size: 1.5em;
 }
 
 .bank-list {

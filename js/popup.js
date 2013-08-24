@@ -1,7 +1,6 @@
-var banks               = {},
-    currentRates        = {},
-    selectedCurrencies  = JSON.parse(localStorage['selected-currencies']),
-    selectedBanks       = JSON.parse(localStorage['selected-banks']),
+var currentRates        = {},
+    selectedCurrencies  = [],
+    selectedBanks       = [],
 
     calcCurrencies      = {
                             in: 'AMD',
@@ -10,26 +9,18 @@ var banks               = {},
 
     port = chrome.runtime.connect({name: 'popup'});
 
-port.onMessage.addListener(function (msg){
-    console.log('Message received. ' + msg);
-    if (msg == 'Unknown message') {
-        return console.log(msg);
-    }
-    currentRates = msg;
-
-    loadData(getRates);
-});
 port.postMessage('rates');
 
 // Get banks list from json
-function loadData(callback) {
-    $.getJSON('/js/banks.json', function(json){
-        banks = json;
+(function loadData(callback) {
+    chrome.storage.local.get({selectedCurrencies: ['USD'], selectedBanks: ['VTB'], currentRates: {} }, function(items) {
+        selectedCurrencies = items.selectedCurrencies;
+        selectedBanks = items.selectedBanks;
+        currentRates = items.currentRates;
 
         callback();
     });
-
-}
+})(function() { getRates(onRatesLoad) });
 
 
 // Get rates
@@ -48,7 +39,7 @@ function getRates(onRateLoad) {
             var td = document.createElement('td');
 
             td.setAttribute('colspan', '2');
-            td.innerText = banks[selectedBanks[i]];
+            td.innerText = selectedBanks[i];
 
             tr.appendChild(td);
 
@@ -72,7 +63,7 @@ function getRates(onRateLoad) {
         // Creating options for banks dropdown
         var bankOption = document.createElement('option');
         bankOption.setAttribute('value', selectedBanks[i]);
-        bankOption.appendChild(document.createTextNode(banks[selectedBanks[i]]));
+        bankOption.appendChild(document.createTextNode(selectedBanks[i]));
         bankList.appendChild(bankOption);
     }
 
@@ -110,7 +101,7 @@ function calculateCurrency(e) {
     var inputType = input.attr('id');
     var reversedType = inputType == 'in' ? 'out' : 'in';
     var expressionRegExp = /^[0-9\*\+\-\/\(\)\.\s]+$/;
-    var currentBank = parseInt($('#bank-list').val());
+    var currentBank = $('#bank-list').val();
 
     if (inputType == 'in')
         var ratio = currentRates[currentBank][calcCurrencies[inputType]].buy /
@@ -183,8 +174,6 @@ function onRatesLoad() {
     initTable();
     initCalc();
 
-
-
     $('#in-select').change(setCurrency);
     $('#out-select').change(setCurrency);
 
@@ -208,6 +197,8 @@ function onRatesLoad() {
             }
         });
     });
-}
 
-$(onRatesLoad);
+    $('#refresh').click(function() {
+        chrome.storage.local.set({ refresh: Math.random() });
+    });
+}

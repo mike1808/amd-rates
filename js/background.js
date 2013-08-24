@@ -1,18 +1,24 @@
 var iconAnimation          = new IconAnimation(),
     currentRates           = {},
     currencies             = {},
+    banks                  = {},
     bestCurrencies         = {},
     intervalId,
     parseUrl               = 'http://rate.am/ru/armenian-dram-exchange-rates/banks/non-cash';
 
-function getCurrencies(callback) {
-    if (!$.isEmptyObject(currencies)) {
+
+function getData(callback) {
+    if (!$.isEmptyObject(currencies) || !$.isEmptyObject(banks)) {
         callback();
     } else {
-        $.getJSON('/js/currencies.json', function(json){
-            $.extend(currencies, json);
+        $.getJSON('/js/currencies.json', function(currenciesJson){
+            $.extend(currencies, currenciesJson);
 
-            callback();
+            $.getJSON('/js/banks.json', function(bankJson){
+                $.extend(banks, bankJson);
+
+                callback();
+            });
         });
     }
 }
@@ -30,14 +36,6 @@ chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(function(msg, iPort) {
         console.log('%s connected', iPort.name);
         console.log('Message: %s', msg);
-
-        switch(iPort.name) {
-            case 'popup': msg == 'rates' ? port.postMessage(currentRates) :
-                          msg == 'refresh' ? port.postMessage({ type: 'refresh'}) : port.postMessage('Unknown request!'); break
-            case 'options': msg == 'rates' ? getCurrencies(getCurrentRates) :
-                            msg == 'update rate' ? setUpdateInterval() : port.postMessage('Unknown request!'); break;
-            case 'content-script': msg == 'rates' ? port.postMessage({ type: 'init', data: currentRates }) : null; break;
-        }
     });
 
     port.onDisconnect.addListener(function() {
@@ -50,61 +48,60 @@ chrome.runtime.onConnect.addListener(function(port) {
 
 
 function getCurrentRates() {
-    var selectedBanks = JSON.parse(localStorage['selected-banks']);
-
     $.ajax({
         url: parseUrl,
         type: 'GET',
         cache: false,
         dataType: 'text'
     })
-        .success(function(html){
-            var rates = $('#rb tr', html);
+    .done(function(html){
+        var rates = $('#rb tr', html);
 
-            for(var i=0; i<selectedBanks.length; i++) {
-                // Parsing rates
+        for(var bank in banks) {
+            // Parsing rates
+            currentRates[bank] = {};
+            currentRates[bank].AMD = {
+                buy: 1,
+                sell: 1
+            };
+            var rate = rates[banks[bank]].children;
 
-                currentRates[selectedBanks[i]] = {};
-                currentRates[selectedBanks[i]].AMD = {
-                    buy: 1,
-                    sell: 1
-                };
-                var rate = rates[selectedBanks[i]].children;
+            for (var currency in currencies){
+                if(rate[currencies[currency].buy].innerText) {
+                    currentRates[bank][currency] = {
+                        buy: rate[currencies[currency].buy].innerText,
+                        sell: rate[currencies[currency].sell].innerText
+                    };
 
-                for (var currency in currencies){
-                    if(rate[currencies[currency].buy].innerText) {
-                        currentRates[selectedBanks[i]][currency] = {
-                            buy: rate[currencies[currency].buy].innerText,
-                            sell: rate[currencies[currency].sell].innerText
-                        };
-
-                        if (rate[currencies[currency].buy].firstChild.className &&
-                            rate[currencies[currency].buy].firstChild.className == 'best')
-                            currentRates[selectedBanks[i]][currency].buyIsBest = true;
-                        if (rate[currencies[currency].sell].firstChild.className &&
-                            rate[currencies[currency].sell].firstChild.className == 'best')
-                            currentRates[selectedBanks[i]][currency].sellIsBest = true;
-                    }
+                    if (rate[currencies[currency].buy].firstChild.className &&
+                        rate[currencies[currency].buy].firstChild.className == 'best')
+                        currentRates[bank][currency].buyIsBest = true;
+                    if (rate[currencies[currency].sell].firstChild.className &&
+                        rate[currencies[currency].sell].firstChild.className == 'best')
+                        currentRates[bank][currency].sellIsBest = true;
                 }
             }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown){
-            console.log('rate.am can\'t be loaded!');
-            console.log(textStatus);
-            console.log(errorThrown);
-            console.log(jqXHR);
 
-        });
+            chrome.storage.local.set({ currentRates: currentRates });
+        }
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+        console.error('rate.am can\'t be loaded!');
+        console.dir(textStatus);
+        console.dir(errorThrown);
+        console.dir(jqXHR);
+
+    });
 }
 
-getCurrencies(getCurrentRates);
+getData(getCurrentRates);
 
 function setUpdateInterval() {
     if (intervalId)
         clearInterval(intervalId);
 
     var updateTime = parseInt(JSON.parse(localStorage['update-time']));
-    intervalId = setInterval(function() {getCurrencies(getCurrentRates); }, updateTime);
+    intervalId = setInterval(function() {getData(getCurrentRates); }, updateTime);
 }
 
 function isBestRate(rate) {

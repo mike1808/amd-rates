@@ -1,20 +1,33 @@
-var port = chrome.runtime.connect({name: 'content-script' }),
-    currentRates = {};
+var currentRates = {},
+    tooltipState = true,
+    tooltipTags = [],
+    tooltipBank = 'VTB';
 
-port.onMessage.addListener(function(msg, iPort) {
-    console.log('%s connected', iPort.name);
+chrome.storage.local.get({
+    currentRates: {},
+    tooltipState: true,
+    tooltipTags: ['span', 'a', 'strong', 'p', 'em', 'i', 'b'],
+    tooltipBank: 'VTB'
+    }, function (items) {
+        currentRates = items.currentRates;
+        tooltipState = items.tooltipState;
+        tooltipTags = items.tooltipTags;
+        tooltipBank = items.tooltipBank;
 
-    switch (msg.type) {
-        case 'init': currentRates = msg.data; break;
-        case 'refresh': addTooltip(); break;
-    }
-
-    $(function() {
-        addTooltip();
-    });
+        if (tooltipState)
+            addTooltip();
 });
 
-port.postMessage('rates');
+chrome.storage.onChanged.addListener(function (changes) {
+    if (changes.tooltipState) {
+        tooltipState = changes.tooltipState.newValue;
+    }
+
+    if (changes.refresh) {
+        if (tooltipState)
+            addTooltip();
+    }
+});
 
 function calculateCurrency(text) {
     var currency = text.match(/\$|£|€|USD|EUR|GBP|RUR|РУБ|руб/gi)[0],
@@ -31,13 +44,13 @@ function calculateCurrency(text) {
         case 'руб': currency = 'RUR'; break;
     }
 
-    return (currentRates['15'][currency].sell * value).toFixed(2);
+    return (currentRates[tooltipBank][currency].sell * value).toFixed(2);
 }
 
 function addTooltip(){
     var regexp = /(\$|£|€|USD|EUR|GBP|RUR|РУБ|руб)(\s*\d+([,.]?\d+)*)|(\s*\d+([,.]?\d+)*)\s*(\$|£|€|USD|EUR|GBP|RUR|РУБ|руб)/gi;
 
-    $('span, div, a, strong, p, em, i, b')
+    $(tooltipTags.join(', '))
         .filter(function(){
             return regexp.test(
                 $(this)

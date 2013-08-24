@@ -1,4 +1,4 @@
-.tooltip {
+.tooltip-amd-rates {
     position: absolute;
     z-index: 1030;
     display: block;
@@ -9,32 +9,32 @@
     visibility: visible;
 }
 
-.tooltip.in {
+.tooltip-amd-rates.in {
     opacity: 0.9;
     filter: alpha(opacity=90);
 }
 
-.tooltip.top {
+.tooltip-amd-rates.top {
     padding: 5px 0;
     margin-top: -3px;
 }
 
-.tooltip.right {
+.tooltip-amd-rates.right {
     padding: 0 5px;
     margin-left: 3px;
 }
 
-.tooltip.bottom {
+.tooltip-amd-rates.bottom {
     padding: 5px 0;
     margin-top: 3px;
 }
 
-.tooltip.left {
+.tooltip-amd-rates.left {
     padding: 0 5px;
     margin-left: -3px;
 }
 
-.tooltip-inner {
+.tooltip-inner-amd-rates {
     max-width: 200px;
     padding: 3px 8px;
     color: #ffffff;
@@ -44,7 +44,7 @@
     border-radius: 4px;
 }
 
-.tooltip-arrow {
+.tooltip-arrow-amd-rates {
     position: absolute;
     width: 0;
     height: 0;
@@ -52,7 +52,7 @@
     border-style: solid;
 }
 
-.tooltip.top .tooltip-arrow {
+.tooltip-amd-rates.top .tooltip-arrow-amd-rates {
     bottom: 0;
     left: 50%;
     margin-left: -5px;
@@ -60,21 +60,21 @@
     border-width: 5px 5px 0;
 }
 
-.tooltip.top-left .tooltip-arrow {
+.tooltip-amd-rates.top-left .tooltip-arrow-amd-rates {
     bottom: 0;
     left: 5px;
     border-top-color: #000000;
     border-width: 5px 5px 0;
 }
 
-.tooltip.top-right .tooltip-arrow {
+.tooltip-amd-rates.top-right .tooltip-arrow-amd-rates {
     right: 5px;
     bottom: 0;
     border-top-color: #000000;
     border-width: 5px 5px 0;
 }
 
-.tooltip.right .tooltip-arrow {
+.tooltip-amd-rates.right .tooltip-arrow-amd-rates {
     top: 50%;
     left: 0;
     margin-top: -5px;
@@ -82,7 +82,7 @@
     border-width: 5px 5px 5px 0;
 }
 
-.tooltip.left .tooltip-arrow {
+.tooltip-amd-rates.left .tooltip-arrow-amd-rates {
     top: 50%;
     right: 0;
     margin-top: -5px;
@@ -90,7 +90,7 @@
     border-width: 5px 0 5px 5px;
 }
 
-.tooltip.bottom .tooltip-arrow {
+.tooltip-amd-rates.bottom .tooltip-arrow-amd-rates {
     top: 0;
     left: 50%;
     margin-left: -5px;
@@ -98,21 +98,21 @@
     border-width: 0 5px 5px;
 }
 
-.tooltip.bottom-left .tooltip-arrow {
+.tooltip-amd-rates.bottom-left .tooltip-arrow-amd-rates {
     top: 0;
     left: 5px;
     border-bottom-color: #000000;
     border-width: 0 5px 5px;
 }
 
-.tooltip.bottom-right .tooltip-arrow {
+.tooltip-amd-rates.bottom-right .tooltip-arrow-amd-rates {
     top: 0;
     right: 5px;
     border-bottom-color: #000000;
     border-width: 0 5px 5px;
 }
 
-.fade {
+.fade-amd-rates {
     opacity: 0;
     -webkit-transition: opacity 0.15s linear;
     transition: opacity 0.15s linear;
