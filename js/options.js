@@ -47,11 +47,6 @@ function loadData() {
         });
 
     });
-
-
-
-
-
 }
 
 function generateBanksList(banks) {

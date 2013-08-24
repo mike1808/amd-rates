@@ -30,7 +30,7 @@ chrome.storage.onChanged.addListener(function (changes) {
 });
 
 function calculateCurrency(text) {
-    var currency = text.match(/\$|£|€|USD|EUR|GBP|RUR|РУБ|руб/gi)[0],
+    var currency = text.match(/\$|£|€|USD|EUR|GBP|RUR|РУБ|руб/gi)[0].toUpperCase(),
         value = parseFloat(text.match(/\d+([,.]?\d+)?/g)[0].replace(/,/,''));
 
     if (!currency)
