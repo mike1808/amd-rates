@@ -2,11 +2,11 @@ var self = this;
 var selectedBanks = [];
 var selectedCurrencies = [];
 
-var port = chrome.runtime.connect({name: "Background"});
+var port = chrome.runtime.connect({name: "options"});
 
 
 function loadData() {
-    $.getJSON("/js/banks.json", function(json){
+    $.getJSON('/js/banks.json', function(json){
         if (localStorage['selected-banks'])
             self.selectedBanks = JSON.parse(localStorage['selected-banks']);
         else
@@ -19,18 +19,18 @@ function loadData() {
 
             if ($(this).is(':checked')) {
                 self.selectedBanks.push(id);
-                port.postMessage('Update current rates');
+                port.postMessage('rates');
             }
             else {
                 self.selectedBanks.remove(id);
-                port.postMessage('Update current rates');
+                port.postMessage('update rate');
             }
 
             localStorage['selected-banks'] = JSON.stringify(!self.selectedBanks.length ? [15] : self.selectedBanks);
         });
     });
 
-    $.getJSON("/js/currencies.json", function(json){
+    $.getJSON('/js/currencies.json', function(json){
         if (localStorage['selected-currencies'])
             self.selectedCurrencies = JSON.parse(localStorage['selected-currencies']);
         else
@@ -48,7 +48,7 @@ function loadData() {
                 self.selectedCurrencies.remove(currency);
             }
 
-            localStorage['selected-currencies'] = JSON.stringify(!self.selectedCurrencies.length ? ["USD"]:
+            localStorage['selected-currencies'] = JSON.stringify(!self.selectedCurrencies.length ? ['USD']:
                 self.selectedCurrencies.sort());
         });
     });
@@ -118,6 +118,6 @@ $(function(){
     updateRate.val(parseInt(localStorage['update-time']) / (1000 * 60));
     updateRate.on('change', function(e) {
         localStorage['update-time'] = parseInt(e.currentTarget.value) * 1000 * 60;
-        port.postMessage('Update "update rate"');
+        port.postMessage('update rate');
     });
 });

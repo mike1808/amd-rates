@@ -9,7 +9,7 @@ function getCurrencies(callback) {
     if (!$.isEmptyObject(currencies)) {
         callback();
     } else {
-        $.getJSON("/js/currencies.json", function(json){
+        $.getJSON('/js/currencies.json', function(json){
             $.extend(currencies, json);
 
             callback();
@@ -23,18 +23,21 @@ iconAnimation.updated.add(function(){
 });
 
 chrome.runtime.onConnect.addListener(function(port) {
-    console.log("Connected .....");
+    console.log('Connected .....');
 
     iconAnimation.fadeIn();
 
-    port.onMessage.addListener(function(msg) {
-        console.log("Message received. " + msg);
-        if (msg == 'Send current rates')
-            port.postMessage(currentRates);
-        if (msg == 'Update current rates')
-            getCurrencies(getCurrentRates);
-        if (msg == 'Update "update rate"')
-            setUpdateInterval();
+    port.onMessage.addListener(function(msg, iPort) {
+        console.log('%s connected', iPort.name);
+        console.log('Message: %s', msg);
+
+        switch(iPort.name) {
+            case 'popup': msg == 'rates' ? port.postMessage(currentRates) :
+                          msg == 'refresh' ? port.postMessage({ type: 'refresh'}) : port.postMessage('Unknown request!'); break
+            case 'options': msg == 'rates' ? getCurrencies(getCurrentRates) :
+                            msg == 'update rate' ? setUpdateInterval() : port.postMessage('Unknown request!'); break;
+            case 'content-script': msg == 'rates' ? port.postMessage({ type: 'init', data: currentRates }) : null; break;
+        }
     });
 
     port.onDisconnect.addListener(function() {

@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "AMD Rates",
-    "version": "0.5.2",
+    "version": "0.6.1",
     "description": "AMD rates of many banks with a single click.",
 
     "icons": {
@@ -25,6 +25,15 @@
     "background": {
         "page": "background.html"
     },
+
+    "content_scripts": [
+        {
+            "matches":  ["http://*/*"],
+            "js":       ["js/jquery-2.0.3.min.js", "js/tooltip.js", "js/content-script.js"],
+            "css":      ["css/content.css"],
+            "run_at":   "document_end"
+        }
+    ],
 
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

@@ -4,23 +4,26 @@ var banks               = {},
     selectedBanks       = JSON.parse(localStorage['selected-banks']),
 
     calcCurrencies      = {
-                            in: "AMD",
-                            out: "AMD"
+                            in: 'AMD',
+                            out: 'AMD'
     },
 
-    port = chrome.runtime.connect({name: "Background"});
+    port = chrome.runtime.connect({name: 'popup'});
 
 port.onMessage.addListener(function (msg){
-    console.log("Message received. " + msg);
+    console.log('Message received. ' + msg);
+    if (msg == 'Unknown message') {
+        return console.log(msg);
+    }
     currentRates = msg;
 
     loadData(getRates);
 });
-port.postMessage('Send current rates');
+port.postMessage('rates');
 
 // Get banks list from json
 function loadData(callback) {
-    $.getJSON("/js/banks.json", function(json){
+    $.getJSON('/js/banks.json', function(json){
         banks = json;
 
         callback();
@@ -97,10 +100,11 @@ function setCurrency(e, data) {
     var inputType = currentElement.attr('id').substr(0, currentElement.attr('id').indexOf('select') - 1);
 
     calcCurrencies[inputType] = value;
-    $('#cur-img-' + inputType).attr('src', 'img/' + value + ".gif");
+    $('#cur-img-' + inputType).attr('src', 'img/' + value + '.gif');
     if (!data || !data.swap)
         $('#' + inputType).change();
 }
+
 function calculateCurrency(e) {
     var input = $(this);
     var inputType = input.attr('id');
@@ -130,8 +134,8 @@ function initTable() {
 
     var buyTh = document.createElement('th');
     var sellTh = document.createElement('th');
-    buyTh.innerText = "Buy";
-    sellTh.innerText = "Sell";
+    buyTh.innerText = 'Buy';
+    sellTh.innerText = 'Sell';
 
     var bankTh = document.createElement('th');
     bankTh.setAttribute('colspan', 2);
