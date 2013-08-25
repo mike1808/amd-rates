@@ -91,7 +91,7 @@ function generateCurrenciesList(currencies) {
             checkbox.setAttribute('checked', '');
 
         var img = document.createElement('img');
-        img.setAttribute('src', '/img/' + currency + '.gif');
+        img.setAttribute('src', '/img/' + currency + '.png');
 
         var label = document.createElement('label');
         label.setAttribute('for', currency);
