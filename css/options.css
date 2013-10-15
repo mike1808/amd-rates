@@ -110,12 +110,14 @@ section > div > div {
 .currency-list img {
     height: 3.5em;
     width: 6em;
-    margin: 0 2em;
+    margin: 0 1em;
+    border: 1px solid black;
 }
 
 .currency-list input[type="checkbox"] {
     position: absolute;
     bottom: 1.3em;
+    left: -1em;
 }
 
 .currency-list label {
